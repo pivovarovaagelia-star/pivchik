@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="beer" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff3a6"/><stop offset=".55" stop-color="#ffbd32"/><stop offset="1" stop-color="#e9781a"/>
+    </linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#bd39ff"/><stop offset="1" stop-color="#4d25d5"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="17" fill="url(#bg)"/>
+  <path d="M17 23h27v24a5 5 0 0 1-5 5H22a5 5 0 0 1-5-5V23Z" fill="url(#beer)" stroke="#fff2bd" stroke-width="2"/>
+  <path d="M44 29h5a6 6 0 0 1 0 12h-5" fill="none" stroke="#ffe49a" stroke-width="4"/>
+  <path d="M17 24c0-5 4-8 8-7 2-6 10-6 13-1 5-2 10 2 9 8H17Z" fill="#fff8e9"/>
+  <circle cx="27" cy="34" r="2" fill="#4a2374"/><circle cx="37" cy="34" r="2" fill="#4a2374"/>
+  <path d="M27 40q5 7 10 0" fill="none" stroke="#7c311d" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="m28 10 4-6 4 6h-3v4h-3v-4h-2Z" fill="#ffdf62" stroke="#fff1ad" stroke-width="1"/>
+</svg>
