@@ -1,33 +1,5 @@
-# Пивчик
+## Update from the supplied design reference
 
-Каталог фильмов, сериалов и аниме на React + Vite. Визуальный стиль ориентирован на приложенный референс: космически-сказочный синий фон, фиолетовые панели, облачный баннер, кружка-маскот и горизонтальные карточки.
+Home catalog rows use horizontally scrolling poster lanes and the hero banner uses a brighter blue/lavender fairytale palette. This is a CSS approximation: the exact artwork in the screenshot (logo, castle illustration and beer mascot) was not included as an image asset in this repository. Add a licensed image file to `public/` and wire it as the hero background to reproduce that artwork accurately.
 
-## Скачать исходники
-
-[Скачать ZIP исходного кода](https://github.com/pivovarovaagelia-star/pivchik/archive/refs/heads/main.zip). Это не ZIP готовой production-сборки.
-
-## Запуск (Windows PowerShell)
-
-```powershell
-npm.cmd install
-npm.cmd run dev
-```
-
-Сборка:
-
-```powershell
-npm.cmd run build
-```
-
-## Источники и просмотр
-
-- AniList и TMDB предоставляют каталожные метаданные, а не права на проигрывание.
-- В карточке TMDB кнопка «Где смотреть легально» запрашивает Watch Providers API для выбранного региона и открывает страницу официальной платформы. Наличие ссылки не гарантирует, что провайдер разрешает встраивание в сторонний сайт.
-- Прямые видеопотоки и аудиодорожки в текущем проекте отсутствуют. Для просмотра внутри сайта нужно заключить договор с правообладателем/OTT-поставщиком, который выдаёт разрешённые для встраивания потоки.
-- Плеер не подменяет карточки случайными или тестовыми роликами.
-- API Read Access Token вводится в браузере для личного теста. Для публичного проекта храните секрет на сервере. Токен, опубликованный в переписке, следует отозвать и заменить.
-- Premium, платежи, аккаунты и панель владельца требуют серверной части и интеграций; они пока не реализованы.
-
-## Проверка
-
-В текущей среде не запускались npm install, production-сборка или браузерные проверки. Перед публикацией выполните `npm.cmd run build` и проверьте сайт локально.
+There is no licensed movie/series/anime video provider configured. The disabled “Смотреть” action is intentional; TMDB/AniList provide metadata and provider discovery, not playback rights. Do not remove that state or point it at random streams. For actual playback, obtain a provider/rights-holder agreement and integrate their approved player/stream API.
