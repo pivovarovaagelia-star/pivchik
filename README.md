@@ -1,5 +1,36 @@
-## Update from the supplied design reference
+# Пивчик — версия 2
 
-Home catalog rows use horizontally scrolling poster lanes and the hero banner uses a brighter blue/lavender fairytale palette. This is a CSS approximation: the exact artwork in the screenshot (logo, castle illustration and beer mascot) was not included as an image asset in this repository. Add a licensed image file to `public/` and wire it as the hero background to reproduce that artwork accurately.
+Новая ветка проекта с обновлённым интерфейсом по референсу: боковая навигация, поиск, широкие горизонтальные полки постеров, светлый сказочный баннер, мобильная адаптация. Старый `main` не изменён.
 
-There is no licensed movie/series/anime video provider configured. The disabled “Смотреть” action is intentional; TMDB/AniList provide metadata and provider discovery, not playback rights. Do not remove that state or point it at random streams. For actual playback, obtain a provider/rights-holder agreement and integrate their approved player/stream API.
+## Запуск (Windows PowerShell)
+
+```powershell
+npm.cmd install
+npm.cmd run dev
+```
+
+Сборка:
+
+```powershell
+npm.cmd run build
+```
+
+## Что работает
+
+- Поиск по локальной стартовой подборке, фильтр-разделы, избранное и история в браузере.
+- Аниме-каталог загружается из публичного AniList GraphQL API; новые результаты можно подгрузить.
+- Обложки используют `loading="lazy"`; изображения не загружаются, пока карточки не приближаются к экрану. Внешние картинки могут не открываться при сетевых/VPN/региональных ограничениях.
+- Для карточек есть переход к поиску в JustWatch; это помогает найти официальный сервис, но не запускает видео внутри сайта.
+- «Чёрный клевер» находится в стартовой подборке.
+
+## Честные ограничения
+
+Сторонние потоки с сайтов не скопированы и не встроены: у проекта нет лицензированного видеопоставщика и прав на каталог. Поэтому смотреть фильм/сериал/аниме прямо в плеере пока нельзя. TMDB/AniList — каталожные данные, а не видео. Для встроенного просмотра нужен договор/лицензия с правообладателем и официальные playback credentials. Русская озвучка в карточке сама по себе не подтверждается каталогом.
+
+Платные подписки, авторизация, роли и панель владельца не подключены. Для настоящего премиум-режима нужен сервер, база пользователей и платёжная интеграция; текущие элементы подписки — только визуальный концепт.
+
+Дизайн реализован CSS и эмодзи, потому что исходная иллюстрация из скриншота не добавлена в репозиторий как файл. Чтобы точно воспроизвести фирменный арт (логотип, замок, маскот), добавь исходную картинку в `public/` с разрешением на использование.
+
+## Проверка
+
+В этой среде команда сборки не выполнялась. После распаковки архива запусти `npm.cmd run build`; проверь браузерную консоль и доступность AniList/изображений в твоей сети. VPN может менять доступ к внешним доменам, поведение зависит от провайдера и региона.
